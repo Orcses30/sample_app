@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bcrypt', '~> 3.1.11'
 gem 'rails-controller-testing' #needed to run "rails test:integration"
 # Use postgresql as the database for Active Record
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'pg', '~> 0.20'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
