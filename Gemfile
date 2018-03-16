@@ -10,10 +10,12 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bcrypt', '~> 3.1.11'
+gem 'will_paginate', '~> 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0.0'
 gem 'rails-controller-testing' #needed to run "rails test:integration"
 # Use postgresql as the database for Active Record
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'pg', '~> 0.20'
+gem 'pg', '~> 0.20.0'
 gem 'pry', '~> 0.11.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -45,6 +47,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'sqlite3', '~> 1.3.13' #added line
   gem 'selenium-webdriver'
+  gem 'faker', '~> 1.7.3'
 end
 
 group :development do
@@ -57,7 +60,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.20'
+  gem 'pg', '~> 0.20.0'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
