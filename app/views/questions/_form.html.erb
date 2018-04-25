@@ -1,0 +1,14 @@
+<%= form_for(@question, url: new_question_path) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :cfp_class %>
+  <%= f.number_field :cfp_class, class: 'form-control' %>
+
+  <%= f.label :question %>
+  <%= f.text_field :question, class: 'form-control' %>
+
+  <%= f.label :answer %>
+  <%= f.text_field :answer, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "bnt btn-primary" %>
+<% end %>

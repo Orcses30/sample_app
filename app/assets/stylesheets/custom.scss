@@ -293,3 +293,35 @@ span.picture {
     border: 0;
   }
 }
+
+/* Table */
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid gray;
+  text-align: left
+}
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.pretty th .asc {
+  /*background-color: blue; */
+}
+/* glyphicon glyphicon-sort-by-attributes
+   glyphicon glyphicon-sort-by-attributes-alt */
+.pretty th .desc {
+  /*background-color: orange; */
+}
+
+/* Radio buttons */
+.radio {
+  /*vertical-align: text-top;
+  display: inline-block;
+  color: red;*/
+}

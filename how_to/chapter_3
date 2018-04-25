@@ -1,0 +1,9 @@
+1. Make a controller named StaticPages. Include home and help methods.
+   $ rails generate controller StaticPages home help
+2. Name routes for home and help
+   get 'static_pages/home'
+   get 'static_pages/help'
+3. Update the static_pages/home and static_pages/help views
+   home = <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+   help = <a href="http://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
+             book</a>.

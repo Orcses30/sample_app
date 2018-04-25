@@ -1,0 +1,8 @@
+<% provide(:button_text, 'Save question') %>
+<div class="center jumbotron">
+  <h1>Edit Question # (<%= Question.count %>)</h1>
+
+  <%= link_to "Back", questions_path, class: "btn btn-lg btn-primary" %>
+
+</div>
+<%= render 'form' %>

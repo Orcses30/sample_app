@@ -33,3 +33,13 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# Question bank chapter one
+99.times do |n|
+  question  = "This is question #{n+1}"
+  answer    = "This is answer #{n+1}"
+  cfp_class = 1
+  Question.create!(question:  question,
+                  answer:    answer,
+                  cfp_class: cfp_class)
+end

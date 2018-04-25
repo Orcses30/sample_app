@@ -1,0 +1,26 @@
+<h1>Question # (<%= Question.count %>)</h1>
+<p>
+  <strong>Class</strong>
+  <%= @question.cfp_class %>
+</p>
+
+<p>
+  <strong>Question</strong>
+  <%= @question.question %>
+</p>
+
+<p>
+  <strong>answer</strong>
+  <%= @question.answer %>
+</p>
+
+<%= link_to questions_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-step-backward"></span> Back
+<% end %>
+<%= link_to edit_question_path, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-edit"></span> Edit
+<% end %>
+<%= link_to question_path, method: :delete,
+        data: { confirm: "You sure?" }, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-trash"></span> Delete
+<% end %>
