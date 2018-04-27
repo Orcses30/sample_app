@@ -12,26 +12,32 @@
 
 <div><strong>Choose Class</strong></div>
 <div class ="radio-inline">
-  <div><label><%= radio_button_tag 'class', 'all classes', true %>
-                  All Classes</label></div>
-  <div><label><%= radio_button_tag 'class', 'class one', false %>
-                  Class One</label> General Financial Planning Principles, Professional Conduct, and Regulation</div>
-  <div><label><%= radio_button_tag 'class', 'class two', false %>
-                  Class Two</label> Risk Management, Insurance, and Employee Benefits</div>
-  <div><label><%= radio_button_tag 'class', 'class three', false %>
-                  Class Three</label> Investment Planning</div>
-  <div><label><%= radio_button_tag 'class', 'class four', false %>
-                  Class Four</label> Tax Planning</div>
-  <div><label><%= radio_button_tag 'class', 'class five', false %>
-                  Class Five</label> Retirement Savings and Income Planning</div>
-  <div><label><%= radio_button_tag 'class', 'class six', false %>
-                  Class Six</label> Estate Planning</div>
-  <div><label><%= radio_button_tag 'class', 'class seven', false %>
-                  Class Seven</label> Financial Plan Development</div>
+  <div><label><%= radio_button_tag 'class', 'all classes', true %> All Classes</label> |
+                  <%= pluralize(Question.count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class one', false %>Class One</label>
+                  General Financial Planning Principles, Professional Conduct, and Regulation |
+                  <%= pluralize(Question.where(:cfp_class => 1).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class two', false %> Class Two</label>
+                  Risk Management, Insurance, and Employee Benefits |
+                  <%= pluralize(Question.where(:cfp_class => 2).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class three', false %> Class Three</label>
+                  Investment Planning |
+                  <%= pluralize(Question.where(:cfp_class => 3).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class four', false %> Class Four</label>
+                  Tax Planning |
+                  <%= pluralize(Question.where(:cfp_class => 4).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class five', false %> Class Five</label>
+                  Retirement Savings and Income Planning |
+                  <%= pluralize(Question.where(:cfp_class => 5).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class six', false %> Class Six</label>
+                  Estate Planning |
+                  <%= pluralize(Question.where(:cfp_class => 6).count, "question") %></div>
+  <div><label><%= radio_button_tag 'class', 'class seven', false %> Class Seven</label>
+                  Financial Plan Development |
+                  <%= pluralize(Question.where(:cfp_class => 7).count, "question") %></div>
 </div>
 
 <div><%= link_to "New question", new_question_path, class: "btn btn-primary" %></div>
-<div> There are (<%= Question.count %>) questions in the question bank</div>
 <%= will_paginate @questions %>
   <table class="pretty">
       <tr>
