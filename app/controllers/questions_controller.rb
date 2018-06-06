@@ -44,7 +44,7 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:cfp_class, :question, :answer)
+      params.require(:question).permit(:book_id, :question, :answer)
     end
 
     def sort_column

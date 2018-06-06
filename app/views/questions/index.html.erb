@@ -7,60 +7,35 @@
       This is the home page for learning CFP material
     </h2>
 
-    <%= link_to "Return to home", root_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Return home", root_path, class: "btn btn-primary" %>
+    <%= link_to "View books", books_path, class: "btn btn-primary" %>
+    <%= link_to "New question", new_question_path, class: "btn btn-primary" %>
   </div>
 
-<div><strong>Choose Class</strong></div>
-<div class ="radio-inline">
-  <div><label><%= radio_button_tag 'class', 'all classes', true %> All Classes</label> |
-                  <%= pluralize(Question.count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class one', false %>Class One</label>
-                  General Financial Planning Principles, Professional Conduct, and Regulation |
-                  <%= pluralize(Question.where(:cfp_class => 1).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class two', false %> Class Two</label>
-                  Risk Management, Insurance, and Employee Benefits |
-                  <%= pluralize(Question.where(:cfp_class => 2).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class three', false %> Class Three</label>
-                  Investment Planning |
-                  <%= pluralize(Question.where(:cfp_class => 3).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class four', false %> Class Four</label>
-                  Tax Planning |
-                  <%= pluralize(Question.where(:cfp_class => 4).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class five', false %> Class Five</label>
-                  Retirement Savings and Income Planning |
-                  <%= pluralize(Question.where(:cfp_class => 5).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class six', false %> Class Six</label>
-                  Estate Planning |
-                  <%= pluralize(Question.where(:cfp_class => 6).count, "question") %></div>
-  <div><label><%= radio_button_tag 'class', 'class seven', false %> Class Seven</label>
-                  Financial Plan Development |
-                  <%= pluralize(Question.where(:cfp_class => 7).count, "question") %></div>
-</div>
-
-<div><%= link_to "New question", new_question_path, class: "btn btn-primary" %></div>
 <%= will_paginate @questions %>
-  <table class="pretty">
+  <table>
       <tr>
-        <th><%= sortable "cfp_class", "Class" %></th>
+        <th class ="passive"><%= sortable "book_id", "Book" %></th>
         <th><%= sortable "question" %></th>
-        <th><%= sortable "created_at", "Created" %></th>
+        <th><%= sortable "created_at", "Created"%></th>
+        <th colspan="3"></th>
       </tr>
       <% @questions.each do |question| %>
         <tr>
-          <td><%= question.cfp_class %></td>
+          <td><%= question.book_id %></td>
           <td><%= question.question.truncate(50, separator: /\s/)%></td>
           <td><%= question.created_at.strftime("%B %e, %Y") %></td>
-          <td><%= link_to question_path(question), class: "btn btn-default" do %>
-                  <span class="glyphicon glyphicon-eye-open"></span> Show
+          <td><%= link_to question_path(question), class: "btn btn-sm btn-view" do %>
+                  <span class="glyphicon glyphicon-eye-open"></span>
               <% end %>
 
-          <td><%= link_to edit_question_path(question), class: "btn btn-default" do %>
-                  <span class="glyphicon glyphicon-edit"></span> Edit
+          <td><%= link_to edit_question_path(question), class: "btn btn-sm btn-edit" do %>
+                  <span class="glyphicon glyphicon-edit"></span>
               <% end %>
           </td>
           <td><%= link_to question_path(question), method: :delete,
-                  data: { confirm: "You sure?" }, class: "btn btn-default" do %>
-                  <span class="glyphicon glyphicon-trash"></span> Delete
+                  data: { confirm: "You sure?" }, class: "btn btn-sm btn-delete" do %>
+                  <span class="glyphicon glyphicon-trash"></span>
               <% end %>
           </td>
         </tr>

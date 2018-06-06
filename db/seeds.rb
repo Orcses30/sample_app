@@ -7,7 +7,7 @@ User.create!(name:  "Example User",
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
+40.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -34,12 +34,38 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-# Question bank chapter one
-99.times do |n|
-  question  = "This is question #{n+1}"
-  answer    = "This is answer #{n+1}"
-  cfp_class = 1
-  Question.create!(question:  question,
-                  answer:    answer,
-                  cfp_class: cfp_class)
-end
+# CFP Books
+Book.create!(number:      1,
+             description: "General Financial Planning Principles,
+                           Professional Conduct, and Regulation",
+             created_at:   Time.zone.now)
+Book.create!(number:      2,
+             description: "Risk Management, Insurance, and
+                           Employee Benefits",
+             created_at:   Time.zone.now)
+Book.create!(number:      3,
+             description: "Investment Planning",
+             created_at:   Time.zone.now)
+Book.create!(number:      4,
+             description: "Tax Planning",
+             created_at:   Time.zone.now)
+Book.create!(number:      5,
+             description: "Retirement Savings and Income Planning",
+             created_at:   Time.zone.now)
+Book.create!(number:      6,
+             description: "Estate Planning",
+             created_at:   Time.zone.now)
+Book.create!(number:      7,
+             description: "Financial Plan Development",
+             created_at:   Time.zone.now)
+
+# Questions for Books
+#books = Book.all
+#40.times do |n|
+  #question  = "This is question #{n+1}"
+  #answer    = "This is answer #{n+1}"
+  #books.each { |book| book.questions.create!(
+               #question:  question,
+               #answer:    answer,
+               #book_id: book.number) }
+#end

@@ -296,27 +296,64 @@ span.picture {
 
 /* Table */
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 5px;
 }
 
-td {
-  padding: 10px;
-  border: 1px solid gray;
-  text-align: left
+tr th {
+  color: #FFFFFF;
+  background-color: #337AB7;
+  border-color: #2E6DA4;
+  padding: 7px;
 }
 
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
+tbody td {
+  background-color: #EEEEEE;
+  padding: 5px;
 }
-.pretty th .asc {
-  /*background-color: blue; */
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
-/* glyphicon glyphicon-sort-by-attributes
-   glyphicon glyphicon-sort-by-attributes-alt */
-.pretty th .desc {
-  /*background-color: orange; */
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+th .current.asc,
+th .current.desc,
+th .current.neutral {
+  color: #FFFFFF;
+}
+/* Glyphicons */
+.glyphicon {
+    font-size: 10px;
+}
+.glyphicon.glyphicon-eye-open {
+  color: green;
+}
+
+.glyphicon.glyphicon-edit {
+  color: blue;
+}
+
+.glyphicon.glyphicon-trash {
+  color: red;
+}
+
+/* Buttons */
+.btn-view,
+.btn-edit,
+.btn-delete {
+    background-color: #E2E2E7;
+    padding-top: 2px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-left: 10px;
 }
 
 /* Radio buttons */

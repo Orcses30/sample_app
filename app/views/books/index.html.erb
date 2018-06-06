@@ -1,0 +1,32 @@
+<% provide(:title, 'Book Index') %>
+<% provide(:button_text, 'Create book') %>
+<%= link_to "Back to CFP Home", questions_path, class: "btn btn-primary" %>
+<%= link_to "New Book", new_book_path, class: "btn btn-primary" %>
+
+
+<table class="pretty">
+  <tr>
+    <th>Class</th>
+    <th>Description</th>
+  </tr>
+
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.number %></td>
+      <td><%= book.description %></td>
+      <td><%= link_to book_path(book), class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-eye-open"></span> Show
+          <% end %>
+
+      <td><%= link_to edit_book_path(book), class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit
+          <% end %>
+      </td>
+      <td><%= link_to book_path(book), method: :delete,
+              data: { confirm: "You sure?" }, class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-trash"></span> Delete
+          <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
